@@ -21,9 +21,8 @@ public class ShoppingCart {
     public double itemsWithDiscount() {
         double total = 0.0;
         for (Food item : items) {
-            total = total + item.getAmount() * item.getPrice();
-            double DiscountPercent = item.getDiscount();
-            total = total * (1 - (DiscountPercent / 100.0));
+            double itemPrice = item.getAmount() * item.getPrice();
+            total = total + itemPrice * (1.0 - item.getDiscount() / 100.0);
 
         }
         return total;
